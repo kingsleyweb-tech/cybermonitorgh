@@ -618,4 +618,8 @@ function startServer(portToUse) {
   });
 }
 
-startServer(INITIAL_PORT);
+if (require.main === module) {
+  startServer(INITIAL_PORT);
+}
+
+module.exports = app;
