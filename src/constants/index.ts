@@ -1,10 +1,10 @@
 import type { ThreatLevel, ThreatCategory, GhanaRegion } from '../types';
 
-// API base — uses local backend when running in development
+// API base — uses local backend when running in development, or relative path / env var in production
 export const API_BASE = process.env.REACT_APP_API_BASE
   || process.env.REACT_APP_API_URL
   || (process.env.NODE_ENV === 'production'
-      ? 'https://cybermonitorgh.onrender.com'
+      ? ''
       : `http://localhost:${process.env.REACT_APP_SERVER_PORT || 3001}`);
 
 // Auto-refresh

@@ -40,6 +40,15 @@ export async function sendAIMessage(
     body: JSON.stringify(body),
   });
 
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('application/json')) {
+    const text = await response.text();
+    console.error('Non-JSON response from server:', text.slice(0, 300));
+    throw new Error(
+      `Server returned an invalid response (${response.status}). If deployed on Vercel, make sure CF_ACCOUNT_ID and CF_API_TOKEN are set in Vercel Environment Variables.`
+    );
+  }
+
   const data: AIChatResponse = await response.json();
 
   if (!response.ok) {

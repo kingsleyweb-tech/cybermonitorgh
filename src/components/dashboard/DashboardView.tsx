@@ -90,7 +90,7 @@ export function DashboardView({
         </div>
       </div>
 
-      {/* Filter Panel */}
+
       <FilterPanel
         search={search}
         setSearch={setSearch}
@@ -112,7 +112,6 @@ export function DashboardView({
         hasMore={hasMore}
       />
 
-      {/* Feed content views */}
       <section className="space-y-4">
         {loading && (
           <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-14 text-center shadow-sm transition-colors">
