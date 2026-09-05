@@ -251,7 +251,7 @@ export function AIAssistantPage() {
   const isEmpty = messages.length === 0;
 
   return (
-    <div className="flex flex-col h-[calc(100vh-8rem)] md:h-[calc(100vh-5rem)] max-h-[880px] bg-white dark:bg-black rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-xl overflow-hidden transition-colors relative">
+    <div className="flex flex-col h-full flex-1 min-h-0 bg-white dark:bg-black rounded-2xl sm:rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-xl overflow-hidden transition-colors relative">
 
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/60 dark:bg-zinc-950 flex-shrink-0">

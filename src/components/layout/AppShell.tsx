@@ -84,8 +84,12 @@ export function AppShell({
       />
 
       {/* Main content view */}
-      <div className="flex-1 flex flex-col md:pl-64 min-w-0">
-        <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
+      <div className={`flex-1 flex flex-col md:pl-64 min-w-0 ${activeTab === 'ai-assistant' ? 'h-[calc(100dvh-3.75rem)] md:h-screen overflow-hidden' : ''}`}>
+        <main className={`max-w-7xl w-full mx-auto ${
+          activeTab === 'ai-assistant'
+            ? 'px-2 sm:px-6 py-2 sm:py-4 flex-1 flex flex-col min-h-0 space-y-0 h-full'
+            : 'px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8'
+        }`}>
           {children}
         </main>
       </div>

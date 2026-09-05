@@ -190,21 +190,23 @@ export default function App() {
         {tab === "ai-assistant" && <AIAssistantPage />}
         {tab === "about-guide"  && <AboutGuidePage onOpenAI={() => setTab("ai-assistant")} />}
 
-        <footer className="border-t border-zinc-200 dark:border-zinc-800/80 pt-6 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors font-sans">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <p className="text-xs font-bold text-zinc-600 dark:text-zinc-300">
-              Cyber News Monitor · Real-Time Threat Intelligence Feeds
-            </p>
-          </div>
-          <div className="flex gap-4">
-            {[["CSA Ghana", "https://csa.gov.gh"], ["CISA", "https://csa.gov.gh"], ["BleepingComputer", "https://www.bleepingcomputer.com"]].map(([label, href]) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-xs font-extrabold text-zinc-500 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-0.5 transition-colors">
-                {label}
-              </a>
-            ))}
-          </div>
-        </footer>
+        {tab !== "ai-assistant" && (
+          <footer className="border-t border-zinc-200 dark:border-zinc-800/80 pt-6 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors font-sans">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <p className="text-xs font-bold text-zinc-600 dark:text-zinc-300">
+                Cyber News Monitor · Real-Time Threat Intelligence Feeds
+              </p>
+            </div>
+            <div className="flex gap-4">
+              {[["CSA Ghana", "https://csa.gov.gh"], ["CISA", "https://csa.gov.gh"], ["BleepingComputer", "https://www.bleepingcomputer.com"]].map(([label, href]) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-xs font-extrabold text-zinc-500 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-0.5 transition-colors">
+                  {label}
+                </a>
+              ))}
+            </div>
+          </footer>
+        )}
       </AppShell>
 
       {/* Welcome & Briefing Modal */}
